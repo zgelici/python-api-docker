@@ -1,0 +1,15 @@
+version: '2'
+services:
+  python-api:
+    build:
+      context: ./
+      dockerfile: pythonapp.dockerfile
+    working_dir: /app
+    ports:
+      - 8081:8081
+    networks:
+      - fringe_apigateway
+
+networks:
+  fringe_apigateway:
+    external: true
